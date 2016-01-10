@@ -62,7 +62,7 @@ class Logger
                             // Which also must be a non-reference according to CppCheck
                             // otherwise va_start invokes undefined behaviour
     const char* format = va_arg(args, const char*);
-    char message[256];
+    char message[512];
     // Use the rest of the arguments together with the
     // format string to construct the actual log message
     vsnprintf(message, sizeof(message), format, args);
